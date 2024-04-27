@@ -1,0 +1,17 @@
+### Local
+
+### Get All Local.
+GET http://localhost:3000/getContacts
+
+### Get Singles
+
+GET http://localhost:3000/getContacts/650c5812c06bc031e32200a1
+
+
+### Production ###
+
+### Get All
+GET https://cse341-contactsproject.onrender.com/getContacts
+
+### Get Single
+GET https://cse341-contactsproject.onrender.com/getContacts/650c5812c06bc031e32200a1
