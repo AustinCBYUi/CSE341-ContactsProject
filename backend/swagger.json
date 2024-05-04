@@ -5,10 +5,10 @@
     "description": "Contacts API is designed to CRUD contacts from a database.",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "cse341-contactsproject.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "http", "https"
   ],
   "paths": {
     "/api-docs": {
