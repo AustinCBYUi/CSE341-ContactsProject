@@ -8,7 +8,7 @@
   "host": "cse341-contactsproject.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http", "https"
+    "https"
   ],
   "paths": {
     "/api-docs": {
