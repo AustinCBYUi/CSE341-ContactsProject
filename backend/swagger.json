@@ -21,7 +21,7 @@
         }
       }
     },
-    "/contacts/": {
+    "/getContacts/": {
       "get": {
         "tags": [
           "Contacts"
@@ -77,7 +77,7 @@
         }
       }
     },
-    "/contacts/{id}": {
+    "/getContacts/{id}": {
       "get": {
         "tags": [
           "Contacts"
