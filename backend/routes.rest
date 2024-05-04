@@ -1,14 +1,43 @@
-### Local
+### ----> Local <---- ###
 
 ### Get All Local.
 GET http://localhost:3000/getContacts
 
-### Get Singles
 
+### Get Singles
 GET http://localhost:3000/getContacts/650c5812c06bc031e32200a1
 
 
-### Production ###
+### Create Contact Local
+POST http://localhost:3000/getContacts HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Austin",
+    "lastName": "Campbell",
+    "email": "cam23021@byui.edu",
+    "favoriteColor": "Lilac",
+    "birthday": "05/18/1997"
+}
+
+
+### Update Contact Local
+PUT http://localhost:3000/getContacts/650c5812c06bc031e32200a1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Bill",
+    "lastName": "Gates",
+    "email": "billgates@test.com",
+    "favoriteColor": "Yellow",
+    "birthday": "10/28/1955"
+}
+
+### Delete Contact Local
+DELETE http://localhost:3000/getContacts/663662dcac815af0fb1d50e4 HTTP/1.1
+
+
+### ----> Production <---- ###
 
 ### Get All
 GET https://cse341-contactsproject.onrender.com/getContacts

@@ -5,7 +5,7 @@
     "description": "Contacts API is designed to CRUD contacts from a database.",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "localhost:3000",
   "basePath": "/",
   "schemes": [
     "http"
@@ -13,7 +13,7 @@
   "paths": {
     "/api-docs": {
       "get": {
-        "description": "",
+        "description": "Displays documentation of this API to help others understand it.",
         "responses": {
           "default": {
             "description": ""
@@ -23,7 +23,10 @@
     },
     "/contacts/": {
       "get": {
-        "description": "",
+        "tags": [
+          "Contacts"
+        ],
+        "description": "Gets all contacts that are stored in the database and displays them as a JSON",
         "produces": [
           "application/json"
         ],
@@ -32,11 +35,54 @@
             "description": "OK"
           }
         }
+      },
+      "post": {
+        "tags": [
+          "Contacts"
+        ],
+        "description": "Creates a new contact and stores it in the database. Automatically generates an id.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "example": "John"
+                },
+                "lastName": {
+                  "example": "Doe"
+                },
+                "email": {
+                  "example": "john12doe@email.com"
+                },
+                "favoriteColor": {
+                  "example": "Green"
+                },
+                "birthday": {
+                  "example": "MM/DD/YYYY"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
       }
     },
     "/contacts/{id}": {
       "get": {
-        "description": "",
+        "tags": [
+          "Contacts"
+        ],
+        "description": "Retrieves and displays one specific contact that is identified by {id}.",
         "produces": [
           "application/json"
         ],
@@ -51,6 +97,74 @@
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Contacts"
+        ],
+        "description": "Updates the body of a specific contact in the database that is identified by {id}.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "example": "John"
+                },
+                "lastName": {
+                  "example": "Doe"
+                },
+                "email": {
+                  "example": "john12doe@email.com"
+                },
+                "favoriteColor": {
+                  "example": "Green"
+                },
+                "birthday": {
+                  "example": "MM/DD/YYYY"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Contacts"
+        ],
+        "description": "Deletes a specific contact from the database that is identified by the {id}.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
